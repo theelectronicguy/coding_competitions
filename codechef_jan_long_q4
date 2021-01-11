@@ -1,0 +1,109 @@
+//problem statement:https://www.codechef.com/problems/BILLRD
+************************************************************************************************************
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long int t;
+    cin>>t;
+    long long int n,k,x,y;
+    int coll_1_x,coll_1_y,coll_2_x,coll_2_y,coll_3_x,coll_3_y,coll_4_x,coll_4_y;
+    while(t)
+    {
+        cin>>n>>k>>x>>y;
+        
+        if(x==y)
+        {
+            cout<<n<<" "<<n<<endl;
+        }
+        else if(x>y)
+            {
+                if(k>4)
+                k=k%4;
+            coll_1_x=n;
+            coll_1_y=y+(n-x); 
+            coll_2_x=coll_1_y;
+            coll_2_y=coll_1_x;
+            coll_3_x=0;
+            coll_3_y=coll_2_y-coll_2_x;
+            coll_4_x=coll_3_y;
+            coll_4_y=coll_3_x;
+            switch(k)
+            {
+            case 0:
+            
+            cout<<coll_4_x<<" "<<coll_4_y<<endl;
+            break;
+            case 1:
+            
+            cout<<coll_1_x<<" "<<coll_1_y<<endl;
+            break;
+            case 2:
+            
+            cout<<coll_2_x<<" "<<coll_2_y<<endl;
+            break;
+            case 3:
+            
+            cout<<coll_3_x<<" "<<coll_3_y<<endl;
+            break;
+            
+            case 4:
+            
+            cout<<coll_4_x<<" "<<coll_4_y<<endl;
+            break;
+            }
+        }
+    
+        else if(y>x)
+            {
+                
+                if(k>4)
+                k=k%4;
+            coll_1_x=x+(n-y);
+            coll_1_y=n; 
+            coll_2_x=coll_1_y;
+            coll_2_y=coll_1_x;
+            coll_3_x=coll_2_x-coll_2_y;
+            coll_3_y=0;
+            coll_4_x=coll_3_y;
+            coll_4_y=coll_3_x;
+            switch(k)
+            {
+            case 0:
+            
+            cout<<coll_4_x<<" "<<coll_4_y<<endl;
+            break;
+            case 1:
+            
+            cout<<coll_1_x<<" "<<coll_1_y<<endl;
+            break;
+            case 2:
+            
+            cout<<coll_2_x<<" "<<coll_2_y<<endl;
+            break;
+            case 3:
+            
+            cout<<coll_3_x<<" "<<coll_3_y<<endl;
+            break;
+            
+            case 4:
+            
+            cout<<coll_4_x<<" "<<coll_4_y<<endl;
+            break;
+            }
+                
+                
+                
+                
+        }
+        
+       
+        
+        t--;
+    }
+
+    return 0;
+}
